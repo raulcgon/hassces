@@ -90,6 +90,7 @@ notify:
 #    service: notify.ios_rgb
 #    data:
 #        message: 'algo'
+
     
 group: !include groups.yaml
 automation: !include automations.yaml

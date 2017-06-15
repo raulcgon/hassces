@@ -1,8 +1,8 @@
 # Aventar las notificaciones al iphone 
 -  alias: NOTIFICAR IOS
-   trigger:
+   trigger: #lanzador
      - platform: homeassistant
-       event: start  
+       event: start
    action:
        service: notify.ios_rgb
 #      message: request_location_update
