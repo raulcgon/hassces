@@ -1,0 +1,6 @@
+owntracks_phone:
+	name: rgb
+	mac: 78:fd:94:b6:c3:98
+    picture: none
+	track: yes
+	hide_if_away: no

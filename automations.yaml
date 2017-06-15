@@ -1,0 +1,9 @@
+# Aventar las notificaciones al iphone 
+-  alias: NOTIFICAR IOS
+   trigger:
+     - platform: homeassistant
+       event: start  
+   action:
+       service: notify.ios_rgb
+#      message: request_location_update
+       message: 'ACABAS DE MOVERTE DE TU CASA'

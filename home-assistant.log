@@ -1,0 +1,1 @@
+2017-06-14 17:50:40 ERROR (MainThread) [homeassistant.config] Invalid config for [automation]: [message] is an invalid option for [automation]. Check: automation->action->0->message. (See C:\Users\RGonzalez\AppData\Roaming\.homeassistant\configuration.yaml, line 94). Please check the docs at https://home-assistant.io/components/automation/
