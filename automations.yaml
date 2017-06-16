@@ -1,9 +1,45 @@
 # Aventar las notificaciones al iphone 
--  alias: NOTIFICAR IOS
+-  id: notificacion al empezar
+   alias: 'NOTIFICAR IOS'
+   hide_entity: False
    trigger: #lanzador
      - platform: homeassistant
        event: start
+   condition: none
    action:
        service: notify.ios_rgb
-#      message: request_location_update
-       message: 'ACABAS DE MOVERTE DE TU CASA'
+       message: request_location_update
+#       data:
+#            message: "ALGO ESTÁ PASANDO"
+#            data:
+#                push:
+#                    badge: 5
+#            message: "ALGO ESTÁ PASANDO"
+#            data:
+#                subtitle: "subtitulo"
+
+      
+##SEND PUSH
+-  id: push_llegandoacasa
+   alias: Push llegando a casa
+   hide_entity: false
+   trigger:
+     - platform: state
+       entity_id: device_tracker.iphone
+       to: 'home'
+   action:
+     - service: notify.ios_rgb
+       data:
+            push:
+                badge: 5
+                category: "GeoLights"
+                
+-  alias: check sensor value and show notification
+   trigger:
+       platform: numeric_state
+       entity_id: sensor.random_sensor
+       above: 10
+   action:
+       service: persistent_notification.create
+       data:
+           message: "sensor greather than 10"
