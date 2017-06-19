@@ -109,6 +109,8 @@ device_tracker:
 #  - platform: ios
 notify:
 
+sensor:
+    platform: random
 #action:
 #    service: notify.ios_rgb
 #    data:
@@ -117,3 +119,17 @@ notify:
     
 group: !include groups.yaml
 automation: !include automations.yaml
+
+input_select:
+    who_cooks:
+        name: Who cooks today
+        options:
+         - Palaus
+         - Anne
+        initial: Anne
+        icon: mdi:panda
+    living_room_preset:
+        options:
+         - visitors
+         - visitors with kids
+         - home alone

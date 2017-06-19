@@ -43,3 +43,14 @@
        service: persistent_notification.create
        data:
            message: "sensor greather than 10"
+
+           
+-  alias: example automation
+   trigger:
+       platform: event
+       event_type: CUSTOM_EVENT
+   action:
+     - service: input_select.select_option
+       data:
+           entity_id: input_select.who_cooks
+           option: Palaus
