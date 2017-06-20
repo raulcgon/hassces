@@ -34,17 +34,26 @@
                 badge: 5
                 category: "GeoLights"
                 
--  alias: check sensor value and show notification
+####                
+-  alias: Notificación en base a sensor
    trigger:
        platform: numeric_state
        entity_id: sensor.random_sensor
        above: 10
    action:
-       service: persistent_notification.create
-       data:
-           message: "sensor greather than 10"
+        service: notify.telegram
+        data:
+            message: "HOLA"
+            data:
+                location:
+                    latitude: "{{ state.device_tracker.iphoneraul.attributes.latitude }}"
+                    longitude: "{{ state.device_tracker.iphoneraul.attributes.longitude }}"
+        
+#       service: persistent_notification.create
+#      data:
+#           message: "sensor arriba de 10"
 
-           
+####           
 -  alias: example automation
    trigger:
        platform: event

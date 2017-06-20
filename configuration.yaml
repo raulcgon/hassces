@@ -61,7 +61,7 @@ updater:
 
 
 # Discover some devices automatically
-#discovery:
+#discovery: enabled
 
 # Allows you to issue voice commands from the frontend in enabled browsers
 conversation:
@@ -94,8 +94,6 @@ zone 1:
   
 device_tracker:
   - platform: icloud
-    username: raulcgon
-    password: '#$R.carlos10'
     
   #- platform: owntracks
     #max_gps_accuracy: 200
@@ -111,6 +109,10 @@ notify:
 
 sensor:
     platform: random
+    name: Mi número aleatorio
+    #minimum: 1
+    #maximum: 10
+    unit_of_measurement: trochiludes
 #action:
 #    service: notify.ios_rgb
 #    data:

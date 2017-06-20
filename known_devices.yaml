@@ -1,7 +1,22 @@
-rgb_iphone:
-	name: rgb
-	mac: 78:fd:94:b6:c3:98
-    picture: none
-	track: yes
-	hide_if_away: no
-    #968d4258-a7f7-3864-afee-cff02518b1dd
+#rgb_iphone:
+#	name: rgb
+#	mac: 
+#    picture: none
+#	track: yes
+#	hide_if_away: no
+    
+iphone:
+    hide_if_away: false
+    mac:
+    name: IPHONERAUL
+    picture:
+    track: true
+    vendor:
+rgb:
+  hide_if_away: false
+  icon:
+  mac:
+  name: rgb
+  picture:
+  track: true
+  vendor:
