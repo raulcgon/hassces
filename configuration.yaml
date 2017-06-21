@@ -2,8 +2,8 @@ homeassistant:
   # Name of the location where Home Assistant is running
   name: Homeraul
   # Location required to calculate the time the sun rises and sets
-  latitude: 22.9302551
-  longitude: -102.6863254
+  latitude: 22.6464226
+  longitude: -103.0205917
   # Impacts weather/sunrise data (altitude above sea level in meters)
   elevation: 2497
   # metric for Metric, imperial for Imperial
@@ -12,31 +12,30 @@ homeassistant:
   time_zone: America/Mexico_City
   
 ios: #!include ios.conf
-  push:
-    categories:
-      - name: geolights
-        identifier: 'GeoLights'
-        actions:
-          - identifier: 'lights_on'
-            title: 'Switch Lights on'
-            activationMode: 'background'
-            authenticationRequired: yes
-            destructive: yes
-            behavior: 'default'
-#    health_check: true
-#    push_categories:
-#      - name: Generic
-#        identifier: 'GENERIC'
-#    push:
-#        categories:
-#          - name: Alarm
-#            identifier: 'ALARM'
-#            actions:
-#              - identifier: 'Sound_alarm'
-#                title: 'Sonar alarma'
-#                 activationMode: 'background'
-#                 authenticationRequired: yes
-#                 behavior: 'default'
+  push_categories: # Defines actionable notifications. Categories are groups of actions. You specify the category in the notification.
+    - name: Alarm
+      identifier: 'ALARM' # Must be unique and ALL CAPS
+      actions:
+        - identifier: 'SOUND_ALARM' # Must be unique and ALL CAPS
+          title: 'Sound Alarm' # Needs to be short!
+          activationMode: 'background' # or background. The mode in which to run the app when the action is performed.
+          authenticationRequired: yes # A Boolean value indicating whether the user must unlock the device before the action is performed.
+          destructive: yes # A Boolean value indicating whether the action is destructive.  When the value of this property is true, the system displays the corresponding button differently to indicate that the action is destructive.
+          behavior: 'default' # or TextInput. When TextInput the system provides a way for the user to enter a text response to be included with the notification.
+          context: 'default' # or Minimal. Default = In this context, the full UI is displayed for the notification’s alert. You may specify up to four custom actions in this context. Minimal = In this context, a minimal UI is displayed for the notification’s alert. You may specify up to two custom actions in this context.
+        - identifier: 'SILENCE_ALARM' # Must be unique and ALL CAPS
+          title: 'Silence Alarm' # Needs to be short!
+          activationMode: 'background' # or background. The mode in which to run the app when the action is performed.
+          authenticationRequired: yes # A Boolean value indicating whether the user must unlock the device before the action is performed.
+          destructive: no # A Boolean value indicating whether the action is destructive.  When the value of this property is true, the system displays the corresponding button differently to indicate that the action is destructive.
+          behavior: 'TextInput' # Default or TextInput. When TextInput the system provides a way for the user to enter a text response to be included with the notification.
+          context: 'default' # or Minimal. Default = In this context, the full UI is displayed for the notification’s alert. You may specify up to four custom actions in this context. Minimal = In this context, a minimal UI is displayed for the notification’s alert. You may specify up to two custom actions in this context.
+          textInputButtonTitle: 'Silencio!' # Only for iOS 10 when behavior is TextInput.
+          textInputPlaceholder: '...' # Only for iOS 10 when behavior is TextInput.
+          parameters: # iOS 9 only. Use this dictionary to specify any behavior-specific data for the action. For example, if you set behavior to TextInput you can use the UIUserNotificationTextInputActionButtonTitleKey key, which lets you customize the title of the button displayed by the text input interface.
+            UIUserNotificationTextInputActionButtonTitleKey: "Silencio!"
+
+
 # Show links to resources in log and frontend
 introduction:
 
@@ -73,7 +72,7 @@ history:
 logbook:
 
 # Track the sun
-sun:
+#sun:
 
 # Weather Prediction
 #sensor:
@@ -86,15 +85,24 @@ tts:
 
 zone 1:
   name: Casa
-  latitude: 22.9302551
-  longitude: -102.6863254
-  radius: 10
+  latitude: 22.773201
+  longitude: -102.544900
   track_ios: true
   icon: mdi:castle
   
+zone 2:
+  name: Centro
+  latitude: 22.7747805
+  longitude: -102.5770593
+  track_ios: true
+  icon: mdi:car
+  
 device_tracker:
-  - platform: icloud
-    
+#  - platform: icloud
+#    track_new_devices: true
+#    consider_home: 00:03:00
+#    username: <USERNAME>
+#    password: <PASSWORD>
   #- platform: owntracks
     #max_gps_accuracy: 200
     #waypoints: True
@@ -106,20 +114,23 @@ device_tracker:
 #notify:
 #  - platform: ios
 notify:
+  - name: notificar
+    platform: ios
+    #target: 968d4258-a7f7-3864-afee-cff02518b1dd
 
 sensor:
-    platform: random
-    name: Mi número aleatorio
+#    platform: random
+#    name: Mi número aleatorio
     #minimum: 1
     #maximum: 10
-    unit_of_measurement: trochiludes
+#    unit_of_measurement: trochiles
 #action:
 #    service: notify.ios_rgb
 #    data:
 #        message: 'algo'
 
     
-group: !include groups.yaml
+#group: !include groups.yaml
 automation: !include automations.yaml
 
 input_select:

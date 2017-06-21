@@ -5,16 +5,16 @@
 #	track: yes
 #	hide_if_away: no
     
-iphone:
-    hide_if_away: false
-    mac:
-    name: IPHONERAUL
-    picture:
-    track: true
-    vendor:
+#iphone:
+#    hide_if_away: false
+#    mac:
+#    name: IPHONERAUL
+#    picture:
+#    track: true
+#    vendor:
 rgb:
   hide_if_away: false
-  icon:
+  icon: mdi:tablet-ipad
   mac:
   name: rgb
   picture:

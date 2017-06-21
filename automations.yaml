@@ -1,65 +1,34 @@
-# Aventar las notificaciones al iphone 
--  id: notificacion al empezar
-   alias: 'NOTIFICAR IOS'
-   hide_entity: False
-   trigger: #lanzador
-     - platform: homeassistant
-       event: start
-   condition: none
-   action:
-       service: notify.ios_rgb
-       message: request_location_update
-#       data:
-#            message: "ALGO ESTÁ PASANDO"
-#            data:
-#                push:
-#                    badge: 5
-#            message: "ALGO ESTÁ PASANDO"
-#            data:
-#                subtitle: "subtitulo"
-
-      
-##SEND PUSH
--  id: push_llegandoacasa
-   alias: Push llegando a casa
-   hide_entity: false
-   trigger:
-     - platform: state
-       entity_id: device_tracker.iphone
-       to: 'home'
-   action:
-     - service: notify.ios_rgb
-       data:
-            push:
-                badge: 5
-                category: "GeoLights"
-                
-####                
--  alias: Notificación en base a sensor
-   trigger:
-       platform: numeric_state
-       entity_id: sensor.random_sensor
-       above: 10
-   action:
-        service: notify.telegram
-        data:
-            message: "HOLA"
-            data:
-                location:
-                    latitude: "{{ state.device_tracker.iphoneraul.attributes.latitude }}"
-                    longitude: "{{ state.device_tracker.iphoneraul.attributes.longitude }}"
-        
-#       service: persistent_notification.create
-#      data:
-#           message: "sensor arriba de 10"
-
-####           
--  alias: example automation
-   trigger:
-       platform: event
-       event_type: CUSTOM_EVENT
-   action:
-     - service: input_select.select_option
-       data:
-           entity_id: input_select.who_cooks
-           option: Palaus
+- alias: example automation
+  trigger:
+    platform: event
+    event_type: CUSTOM_EVENT
+  action:
+  - service: input_select.select_option
+    data:
+      entity_id: input_select.who_cooks
+      option: Palaus
+- id: Notificar_iphone
+  alias: NOTIFICAR IPHONE
+  trigger:
+  - platform: homeassistant
+    event: start
+  action:
+    service: notify.notificar
+    data:
+      message: "HOLA, YA SE DONDE ESTAS"
+      data:
+        push:
+          badge: 5
+          sound: default
+          category: ALARM
+- action:
+  - data:
+      message: "Sensor esta arriba de 10"
+      title: "HAGAMOS PRUEBAS"
+    service: persistent_notification.create
+  alias: new_prueba
+  id: '1498068178453'
+  trigger:
+  - above: '10'
+    entity_id: sensor.random_sensor
+    platform: numeric_state
