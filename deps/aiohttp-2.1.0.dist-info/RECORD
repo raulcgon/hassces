@@ -1,10 +1,10 @@
 aiohttp/__init__.py,sha256=YEZvY1iqG16rfKx6LheE7hhl-eb3HmMwZBqwJtZtS-4,1210
 aiohttp/_cparser.pxd,sha256=tgw30SL6kQSczzGMlMhx2Cuhf_O8P8ZPimVCb85xILc,3959
 aiohttp/_http_parser.c,sha256=pEjEjVTIRk8Tcg9k0STAtpDz1JE4KvIoisfezeu1H4w,498077
-aiohttp/_http_parser.cp36-win_amd64.pyd,sha256=3nLh7UhllzYWDWm7VysrRbmU_08pQ6MCWW4EymY3qe0,105472
+aiohttp/_http_parser.cp36-win32.pyd,sha256=LM7Bmb1ebQ2LnH0ts0a2QNxBUYXpa-CKdTVbZ2cHAMo,96256
 aiohttp/_http_parser.pyx,sha256=KSg_ieFUcnQhvAHHf-CU3FUCgKA8CPTW7f0gNTU6CyE,18760
 aiohttp/_websocket.c,sha256=lKHC9mHlKvcoY1VXwX4LuHPyFGpAqwTOAxgyx2XrBAk,100739
-aiohttp/_websocket.cp36-win_amd64.pyd,sha256=cmIeUlgyGhRsBrRQlpLx_mfp18sE2pAJScZHIgxt0VU,23040
+aiohttp/_websocket.cp36-win32.pyd,sha256=28sbJsf8jZhqxdUdwgWSPMulXfqjyU-fz1XWEXBqwbc,18944
 aiohttp/_websocket.pyx,sha256=jtAtuevgwQkBa1nVpyJJpHu52CbwQniH4yB_7dzf5sk,1560
 aiohttp/abc.py,sha256=nMA-RlIWX8UtUxZrhdPlNKFSIX1TCfCP_4GlNeIRJz4,3397
 aiohttp/backport_cookies.py,sha256=d2Hp9_zY1epvZLYD402mrXz89oKaoriBNCU9AtWZExM,14964
@@ -46,7 +46,7 @@ aiohttp/worker.py,sha256=GcoSRwiGrgz8MgVQtt_YH6mbAoOSM6A6IPmSKmisjM4,8381
 aiohttp-2.1.0.dist-info/DESCRIPTION.rst,sha256=hY5JeFCYsOb9bDxrCcxfAUa32Gh84meidjY-kWnKxDA,10891
 aiohttp-2.1.0.dist-info/METADATA,sha256=BaXbhbvhSMM1XB1BqebVNTc3FC2wEdSlEiF_Mtr29ss,11958
 aiohttp-2.1.0.dist-info/RECORD,,
-aiohttp-2.1.0.dist-info/WHEEL,sha256=4fkP9V5fUlnPlEu2h0nt7u0cPpJipYsJO32nXNevnFk,106
+aiohttp-2.1.0.dist-info/WHEEL,sha256=xiHTm3JxoVljPSD6nSGhq3B4VY9iUqMNXwYQ259n1PI,102
 aiohttp-2.1.0.dist-info/metadata.json,sha256=S7bx6mXCIvqpL9OyT-vGAVZ5KAmRIVGrDV6KOJSEMW0,1314
 aiohttp-2.1.0.dist-info/top_level.txt,sha256=iv-JIaacmTl-hSho3QmphcKnbRRYx1st47yjz_178Ro,8
 aiohttp-2.1.0.dist-info/INSTALLER,sha256=zuuue4knoyJ-UwPPXg8fezS7VCrXJQrAP7zeNuwvFQg,4

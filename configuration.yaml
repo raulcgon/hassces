@@ -60,7 +60,7 @@ updater:
 
 
 # Discover some devices automatically
-#discovery: enabled
+discovery:
 
 # Allows you to issue voice commands from the frontend in enabled browsers
 conversation:
@@ -98,6 +98,8 @@ zone 2:
   icon: mdi:car
   
 device_tracker:
+  - platform: owntracks
+
 #  - platform: icloud
 #    track_new_devices: true
 #    consider_home: 00:03:00
@@ -112,12 +114,11 @@ device_tracker:
 #  - platform: iphone
 
 #notify:
-#  - platform: ios
 notify:
-  - name: notificar
-    platform: ios
-    #target: 968d4258-a7f7-3864-afee-cff02518b1dd
-
+#  - platform: ios
+#    name: ios
+#    target: "968d4258-a7f7-3864-afee-cff02518b1dd"
+#    target: rgb
 sensor:
 #    platform: random
 #    name: Mi número aleatorio
@@ -129,20 +130,20 @@ sensor:
 #    data:
 #        message: 'algo'
 
-    
-#group: !include groups.yaml
+
+group: !include groups.yaml
 automation: !include automations.yaml
 
-input_select:
-    who_cooks:
-        name: Who cooks today
-        options:
-         - Palaus
-         - Anne
-        initial: Anne
-        icon: mdi:panda
-    living_room_preset:
-        options:
-         - visitors
-         - visitors with kids
-         - home alone
+#input_select:
+#    who_cooks:
+#        name: Who cooks today
+#        options:
+#         - Palaus
+#         - Anne
+#        initial: Anne
+#        icon: mdi:panda
+#    living_room_preset:
+#        options:
+#         - visitors
+#         - visitors with kids
+#         - home alone

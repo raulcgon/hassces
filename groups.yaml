@@ -1,3 +1,5 @@
 persona:
   entities:
   - device_tracker.rgb
+  name: persona
+  view: false

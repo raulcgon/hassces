@@ -10,10 +10,14 @@
 - id: Notificar_iphone
   alias: NOTIFICAR IPHONE
   trigger:
-  - platform: homeassistant
-    event: start
+#    platform: homeassistant
+#    event: start
+    platform: zone
+    entity_id: device_tracker.rgb
+    zone: zone.home
+    event: enter
   action:
-    service: notify.notificar
+    service: notify.ios_rgb
     data:
       message: "HOLA, YA SE DONDE ESTAS"
       data:

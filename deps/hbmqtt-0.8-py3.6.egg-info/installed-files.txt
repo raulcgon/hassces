@@ -90,7 +90,10 @@ SOURCES.txt
 top_level.txt
 ..\..\..\bin\hbmqtt-script.py
 ..\..\..\bin\hbmqtt.exe
+..\..\..\bin\hbmqtt.exe.manifest
 ..\..\..\bin\hbmqtt_pub-script.py
 ..\..\..\bin\hbmqtt_pub.exe
+..\..\..\bin\hbmqtt_pub.exe.manifest
 ..\..\..\bin\hbmqtt_sub-script.py
 ..\..\..\bin\hbmqtt_sub.exe
+..\..\..\bin\hbmqtt_sub.exe.manifest
